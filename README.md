@@ -302,5 +302,5 @@ This project helped in practicing:
 
 **Shreepad Gundupkar**
 
-Bachelor of Engineering (Electronics & Communication Engineering)  
-Aspiring Embedded Systems Engineer
+
+C Programming | Embedded Systems | Software Development
