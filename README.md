@@ -244,7 +244,7 @@ Make sure GCC is installed on your system.
 Compile the project using:
 
 ```bash
-gcc *.c -o addressbook
+gcc *.c 
 ```
 
 ## How to Run
@@ -252,14 +252,9 @@ gcc *.c -o addressbook
 ### Windows
 
 ```bash
-addressbook.exe
+./a.out
 ```
 
-### Linux
-
-```bash
-./addressbook
-```
 
 ## Example Workflow
 
