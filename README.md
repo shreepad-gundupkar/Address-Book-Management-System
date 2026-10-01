@@ -1,5 +1,3 @@
-# Address-Book-Management-System
-A C-based Address Book Management System to store, search, edit, delete, and manage contact information efficiently using file handling and data structures.
 # Address Book Management System
 
 A menu-driven **Address Book Management System developed in C** for creating, searching, editing, deleting, listing, and storing contact information using text file handling.
