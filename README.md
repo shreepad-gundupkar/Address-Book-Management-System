@@ -223,16 +223,18 @@ No separate sorting option is required in the menu.
 The application provides a menu-driven interface.
 
 ```text
-========== Address Book ==========
++-----------------------------------+
+|         ADDRESS BOOK MENU         |
++-----------------------------------+
+| 1. Create Contact                 |
+| 2. Search Contact                 |
+| 3. Edit Contact                   |
+| 4. Delete Contact                 |
+| 5. List All Contacts              |
+| 6. Save & Exit                    |
++-----------------------------------+
 
-1. Create Contact
-2. Search Contact
-3. Edit Contact
-4. Delete Contact
-5. List Contacts
-6. Exit
-
-Enter your choice:
+Enter Your Choice :
 ```
 
 ## How to Compile
