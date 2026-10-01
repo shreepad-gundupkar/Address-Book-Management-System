@@ -1,81 +1,103 @@
 # Address-Book-Management-System
+A C-based Address Book Management System to store, search, edit, delete, and manage contact information efficiently using file handling and data structures.
+# Address Book Management System
 
-A C-based Address Book Management System to store, search, edit, delete, and manage contact information efficiently using file handling and modular design.
+A menu-driven **Address Book Management System developed in C** for creating, searching, editing, deleting, listing, and storing contact information using text file handling.
 
 ## Features
 
-- Create new contacts with real-time validation
-- List all contacts in a formatted ascii table
+- Create new contacts
+- List all contacts
 - Search contacts by:
-  - Name
-  - Phone Number
-  - Email ID
+  - Name
+  - Phone Number
+  - Email ID
 - Edit contacts by:
-  - Name
-  - Phone Number
-  - Email ID
+  - Name
+  - Phone Number
+  - Email ID
 - Delete contacts by:
-  - Name
-  - Phone Number
-  - Email ID
-- Handles sub-menus for operations (Search, Edit, Delete)
+  - Name
+  - Phone Number
+  - Email ID
+- Handles multiple contacts with the same name
 - Validates names, phone numbers, and email IDs
-- Prevents duplicate phone numbers and email IDs
-- Automatically sorts contacts alphabetically by name upon creation
+- Prevents duplicate phone numbers
+- Prevents duplicate email IDs
+- Automatically sorts contacts alphabetically by name when a new contact is created
 - Loads contacts from a file when the program starts
-- Saves contacts to a text file when exiting
+- Saves contacts to a text file when the program exits
+- Menu-driven user interface
 
 ## Technologies Used
 
 - **Programming Language:** C
 - **Compiler:** GCC
-- **Data Storage:** Text Files (`.txt`)
+- **Data Storage:** Text Files (.txt)
+
+## C Concepts Used
+
+- Structures
+- Arrays
+- Strings
+- Functions
+- Pointers
+- Searching
+- Sorting
+- File Handling
+- Input Validation
+- CRUD Operations
+- Modular Programming
 
 ## Project Structure
 
 ```text
 AddressBook/
 │
-├── main.c          # Application entry point & main menu loop
-├── contact.c       # Core CRUD functions & validation logic
-├── contact.h       # Structure & function prototypes for contact operations
-├── file.c          # Load & save functions for text file handling
-├── file.h          # Function declarations for file handling
-├── contacts.txt    # Text file used for data persistence
-└── README.md       # Project documentation
+├── main.c
+├── contact.c
+├── contact.h
+├── file.c
+├── file.h
+├── contacts.txt
+└── README.md
+```
 
-Application Interface & Outputs
-1. Main Menu
-Plaintext
-+-----------------------------------+
-|         ADDRESS BOOK MENU         |
-+-----------------------------------+
-| 1. Create Contact                 |
-| 2. Search Contact                 |
-| 3. Edit Contact                   |
-| 4. Delete Contact                 |
-| 5. List All Contacts              |
-| 6. Save & Exit                    |
-+-----------------------------------+
+## File Description
 
-Enter Your Choice : 
-2. Create Contact
-Creates a new contact record with input prompts and auto-sorting.
+| File | Description |
+|------|-------------|
+| `main.c` | Contains the main function and menu of the application |
+| `contact.c` | Contains contact creation, search, edit, delete, list, and validation functions |
+| `contact.h` | Header file containing declarations related to contact operations |
+| `file.c` | Contains functions for loading contacts from and saving contacts to files |
+| `file.h` | Header file containing file-handling function declarations |
+| `contacts.txt` | Stores contact information in text format |
+| `README.md` | Project documentation |
 
-Plaintext
-Enter Your Choice : 1
+## Application Modules
 
-Enter the name        : Chetan
-Enter the phoneNumber : 9886568521
-Enter the Gmail ID    : chetan@gmail.com
+### 1. Create Contact
 
-Contact Create Successfully
-3. List All Contacts
-Displays all records formatted in an ASCII tabular structure.
+The user can create a new contact by entering:
 
-Plaintext
-Enter Your Choice : 5
+- Name
+- Phone Number
+- Email ID
 
+Each field is validated before the contact is added.
+
+The application checks for duplicate phone numbers and email IDs.
+
+After creating a contact, the contacts are automatically sorted alphabetically by name.
+
+### 2. List Contacts
+
+Displays all contacts in an organized format.
+
+Example:
+
+```text
 +----+----------------+----------------+--------------------------+
 | No | Name           | Phone Number   | Email ID                 |
 +----+----------------+----------------+--------------------------+
@@ -85,88 +107,206 @@ Enter Your Choice : 5
 | 4  | Shreepad       | 9876543211     | shreepad123@gmail.com    |
 | 5  | Vittal         | 9876543214     | vittal123@gamil.com      |
 +----+----------------+----------------+--------------------------+
-4. Search Contact
-Provides sub-menu choices to search by specific fields.
+```
 
-Plaintext
-+-----------------------------------+
-|        SEARCH CONTACT MENU        |
-+-----------------------------------+
-| 1. Search By Name                 |
-| 2. Search By Phone Number         |
-| 3. Search By Email ID             |
-| 4. Exit Search                    |
-+-----------------------------------+
+### 3. Search Contact
 
-Enter Your Choice : 1
+Contacts can be searched using:
 
-Enter the searching name : Chetan
+- Name
+- Phone Number
+- Email ID
 
---------------------Contact Found--------------------
+If multiple contacts have the same name, the matching contacts are displayed and the user can select the required contact.
 
-NAME                PHONE NUMBER         EMAIL
-Chetan              9886568521           chetan@gmail.com
-5. Edit Contact
-Modifies specific fields of an existing contact.
+### 4. Edit Contact
 
-Plaintext
-+-----------------------------------+
-|         EDIT CONTACT MENU         |
-+-----------------------------------+
-| 1. Edit By Name                   |
-| 2. Edit By Phone Number           |
-| 3. Edit By Email ID               |
-| 4. Exit                           |
-+-----------------------------------+
+Contacts can be edited using:
 
-Enter Your Choice : 1
+- Name
+- Phone Number
+- Email ID
 
-Enter existing name: Chetan
-Enter new name     : ChetanKumar
+The corresponding field is updated after validation.
 
-Name updated successfully
-6. Delete Contact
-Deletes contacts by selected criteria and confirms removal.
+For example:
 
-Plaintext
-+-----------------------------------+
-|        DELETE CONTACT MENU        |
-+-----------------------------------+
-| 1. Delete By Name                 |
-| 2. Delete By Phone Number         |
-| 3. Delete By Email ID             |
-| 4. Exit                           |
-+-----------------------------------+
+- Edit by Name → updates the name
+- Edit by Phone Number → updates the phone number
+- Edit by Email ID → updates the email ID
 
-Enter Your Choice : 1
+### 5. Delete Contact
 
-Enter name to delete: ChetanKumar
+Contacts can be deleted using:
 
-Contact deleted successfully
-Exiting the delete menu:
+- Name
+- Phone Number
+- Email ID
 
-Plaintext
-Enter Your Choice : 4
-Exiting Delete Menu
-7. Save & Exit
-Saves all data to file and terminates program execution.
+When deleting by name, multiple matching contacts are displayed so that the user can select the required contact.
 
-Plaintext
-Enter Your Choice : 6
+### 6. File Handling
 
-Saving and Exiting...
-How to Compile and Run
-Compilation
-Bash
-gcc *.c -o a.out
-Execution
-Linux / WSL
-Bash
-./a.out
-Windows (CMD / PowerShell)
-Bash
-a.exe
-Author
-Shreepad Gundupkar
+The application uses file handling to maintain contact information.
+
+Contacts are loaded when the application starts and updated contact information is saved when the application exits.
+
+The main text file used by the project is:
+
+```text
+contacts.txt
+```
+
+Example:
+
+```text
+Akshay 9876543213 akshay123@gamil.com      
+Chetan 9886568521 chetan@gmail.com         
+Kishor 9876543212 kishor123@gmail.com      
+Shreepad 9876543211 shreepad123@gmail.com    
+Vittal 9876543214 vittal123@gamil.com
+```
+
+## Validation
+
+### Name Validation
+
+The name is validated before creating or editing a contact.
+
+### Phone Number Validation
+
+The phone number must:
+
+- Contain exactly 10 digits
+- Start with a digit from `6` to `9`
+- Be unique in the address book
+
+### Email Validation
+
+The email ID is validated for:
+
+- Presence of `@`
+- Presence of `.`
+- Only one `@`
+- `.` must occur after `@`
+- At least one character between `@` and `.`
+- No extra characters after `.com`
+- Email ID must be unique
+
+## Automatic Sorting
+
+Contacts are automatically sorted alphabetically by **name** whenever a new contact is created.
+
+Example:
+
+```text
+Before:
+
+Kishor
+Shreepad
+
+New Contact:
+
+Akshay
+
+After:
+
+Akshay
+Kishor
+Shreepad
+```
+
+No separate sorting option is required in the menu.
+
+## Menu
+
+The application provides a menu-driven interface.
+
+```text
+========== Address Book ==========
+
+1. Create Contact
+2. Search Contact
+3. Edit Contact
+4. Delete Contact
+5. List Contacts
+6. Exit
+
+Enter your choice:
+```
+
+## How to Compile
+
+Make sure GCC is installed on your system.
+
+Compile the project using:
+
+```bash
+gcc *.c -o addressbook
+```
+
+## How to Run
+
+### Windows
+
+```bash
+addressbook.exe
+```
+
+### Linux
+
+```bash
+./addressbook
+```
+
+## Example Workflow
+
+```text
+1. Start the application
+        ↓
+2. Load existing contacts
+        ↓
+3. Create / Search / Edit / Delete / List contacts
+        ↓
+4. New contacts are automatically sorted by name
+        ↓
+5. Exit the application
+        ↓
+6. Save updated contacts to contacts.txt
+```
+
+## Learning Outcomes
+
+This project helped in practicing:
+
+- C Programming Fundamentals
+- Structures
+- Functions
+- Pointers
+- Arrays
+- String Handling
+- Searching
+- Sorting
+- File Handling
+- Text File Operations
+- Input Validation
+- CRUD Operations
+- Modular Programming
+- Problem Solving and Debugging
+
+## Future Improvements
+
+- Case-insensitive searching
+- Improved email validation
+- Sorting by phone number or email
+- Import/export of additional file formats
+- Database integration
+- Graphical user interface
+- Improved user interface and error handling
+
+## Author
+
+**Shreepad Gundupkar**
+
 
 C Programming | Embedded Systems | Software Development
